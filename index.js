@@ -13,10 +13,11 @@ client.on('message', msg => {
   if (msg.content === 'hola') {
     msg.reply('OLA K ASE?');
   }
-  client.on('guildMemberAdd', member => {
-    const guild = member.guild;
-    guild.channels.find(channel => channel.name === "general").send('Bienvenido a nuestro server... how\'s pre season going?' + member);
-  });
+});
+
+client.on('guildMemberAdd', member => {
+  const guild = member.guild;
+  guild.channels.find(channel => channel.name === "general").send('Bienvenido a nuestro server... how\'s pre season going?' + member);
 });
 
 client.login(process.env.BOT_TOKEN);
